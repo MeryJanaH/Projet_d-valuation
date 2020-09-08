@@ -9,7 +9,7 @@ Projet d'évaluation : VHDL &amp;&amp; CR
  Dossier `test` (Optionnel)     : Contient les fichiers de la deuxième méthode de la réalisation du multiplication (en utilisant FSM) que j'ai adapté avec mon circuit (En faisant des petits modifications sur la partie opérative au niveau des connexions pour l'inclusion de cette méthode, ça marche très bien)
  
  -------------------------------------------------
- Chaque code qui réalise un fonctionnement précit contient 4 dossiers :
+ Chaque code qui réalise un fonctionnement précis contient 4 dossiers :
    
     modelsim   : Le script de compilation et simulation
     quartus    : Projet quartus 
