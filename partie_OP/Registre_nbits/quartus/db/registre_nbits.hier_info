@@ -1,0 +1,18 @@
+|registre_nbits
+Clk => Data_out[2]~reg0.CLK
+Clk => Data_out[1]~reg0.CLK
+Clk => Data_out[0]~reg0.CLK
+RST => Data_out[2]~reg0.ACLR
+RST => Data_out[1]~reg0.ACLR
+RST => Data_out[0]~reg0.ACLR
+Enable => Data_out[2]~reg0.ENA
+Enable => Data_out[1]~reg0.ENA
+Enable => Data_out[0]~reg0.ENA
+Data_in[0] => Data_out[0]~reg0.DATAIN
+Data_in[1] => Data_out[1]~reg0.DATAIN
+Data_in[2] => Data_out[2]~reg0.DATAIN
+Data_out[0] <= Data_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Data_out[1] <= Data_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Data_out[2] <= Data_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

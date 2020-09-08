@@ -1,0 +1,11 @@
+|P_C
+START => n_state.E1.DATAB
+START => Selector0.IN2
+Comp => Selector1.IN2
+Comp => n_state.E3.DATAB
+Rdy <= process_1~0.DB_MAX_OUTPUT_PORT_TYPE
+En_a <= En_a~0.DB_MAX_OUTPUT_PORT_TYPE
+En_b <= En_a~0.DB_MAX_OUTPUT_PORT_TYPE
+En_c <= En_a~0.DB_MAX_OUTPUT_PORT_TYPE
+
+

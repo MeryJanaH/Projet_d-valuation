@@ -1,0 +1,547 @@
+Classic Timing Analyzer report for factorielle
+Tue Sep 08 11:09:47 2020
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Parallel Compilation
+  6. Clock Setup: 'CLK'
+  7. tsu
+  8. tco
+  9. th
+ 10. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                                 ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------+--------------------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                                      ; To                                         ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------+--------------------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 6.144 ns                         ; N[0]                                      ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; --         ; CLK      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 7.412 ns                         ; top_op:O|registre_nbits:Reg_c|Data_out[1] ; fact[1]                                    ; CLK        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 0.122 ns                         ; START                                     ; P_C:C|c_state.E1                           ; --         ; CLK      ; 0            ;
+; Clock Setup: 'CLK'           ; N/A   ; None          ; 208.51 MHz ( period = 4.796 ns ) ; top_op:O|registre_nbits:Reg_a|Data_out[0] ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                           ;                                            ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-------------------------------------------+--------------------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EP2C70F896C6       ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Minimum Core Junction Temperature                                   ; 0                  ;      ;    ;             ;
+; Maximum Core Junction Temperature                                   ; 85                 ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; On                 ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; CLK             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 2           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     1 processor            ; 100.0%      ;
+;     2 processors           ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'CLK'                                                                                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------+--------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                                       ; To                                         ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------+--------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 208.51 MHz ( period = 4.796 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.586 ns                ;
+; N/A                                     ; 210.44 MHz ( period = 4.752 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.542 ns                ;
+; N/A                                     ; 210.97 MHz ( period = 4.740 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.530 ns                ;
+; N/A                                     ; 211.37 MHz ( period = 4.731 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.521 ns                ;
+; N/A                                     ; 211.91 MHz ( period = 4.719 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.511 ns                ;
+; N/A                                     ; 213.36 MHz ( period = 4.687 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.477 ns                ;
+; N/A                                     ; 213.40 MHz ( period = 4.686 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.478 ns                ;
+; N/A                                     ; 213.90 MHz ( period = 4.675 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.465 ns                ;
+; N/A                                     ; 214.59 MHz ( period = 4.660 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 4.446 ns                ;
+; N/A                                     ; 214.73 MHz ( period = 4.657 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 4.447 ns                ;
+; N/A                                     ; 214.87 MHz ( period = 4.654 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.446 ns                ;
+; N/A                                     ; 216.40 MHz ( period = 4.621 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.413 ns                ;
+; N/A                                     ; 216.68 MHz ( period = 4.615 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 4.401 ns                ;
+; N/A                                     ; 216.78 MHz ( period = 4.613 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 4.403 ns                ;
+; N/A                                     ; 217.20 MHz ( period = 4.604 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 4.390 ns                ;
+; N/A                                     ; 217.34 MHz ( period = 4.601 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 4.391 ns                ;
+; N/A                                     ; 217.68 MHz ( period = 4.594 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 4.384 ns                ;
+; N/A                                     ; 218.20 MHz ( period = 4.583 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 4.371 ns                ;
+; N/A                                     ; 218.34 MHz ( period = 4.580 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 4.372 ns                ;
+; N/A                                     ; 219.30 MHz ( period = 4.560 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 4.346 ns                ;
+; N/A                                     ; 219.30 MHz ( period = 4.560 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 4.352 ns                ;
+; N/A                                     ; 219.78 MHz ( period = 4.550 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 4.338 ns                ;
+; N/A                                     ; 219.78 MHz ( period = 4.550 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 4.340 ns                ;
+; N/A                                     ; 219.93 MHz ( period = 4.547 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 4.339 ns                ;
+; N/A                                     ; 220.36 MHz ( period = 4.538 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 4.328 ns                ;
+; N/A                                     ; 221.39 MHz ( period = 4.517 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 4.309 ns                ;
+; N/A                                     ; 221.43 MHz ( period = 4.516 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 4.308 ns                ;
+; N/A                                     ; 221.63 MHz ( period = 4.512 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.298 ns                ;
+; N/A                                     ; 222.02 MHz ( period = 4.504 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 4.290 ns                ;
+; N/A                                     ; 222.02 MHz ( period = 4.504 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 4.296 ns                ;
+; N/A                                     ; 222.37 MHz ( period = 4.497 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 4.283 ns                ;
+; N/A                                     ; 223.02 MHz ( period = 4.484 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 4.276 ns                ;
+; N/A                                     ; 223.06 MHz ( period = 4.483 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 4.271 ns                ;
+; N/A                                     ; 223.06 MHz ( period = 4.483 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 4.277 ns                ;
+; N/A                                     ; 223.21 MHz ( period = 4.480 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 4.266 ns                ;
+; N/A                                     ; 224.57 MHz ( period = 4.453 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 4.243 ns                ;
+; N/A                                     ; 224.72 MHz ( period = 4.450 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 4.238 ns                ;
+; N/A                                     ; 224.72 MHz ( period = 4.450 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 4.244 ns                ;
+; N/A                                     ; 224.87 MHz ( period = 4.447 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.233 ns                ;
+; N/A                                     ; 225.17 MHz ( period = 4.441 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 4.227 ns                ;
+; N/A                                     ; 226.24 MHz ( period = 4.420 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 4.208 ns                ;
+; N/A                                     ; 226.40 MHz ( period = 4.417 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; CLK        ; CLK      ; None                        ; None                      ; 4.203 ns                ;
+; N/A                                     ; 226.40 MHz ( period = 4.417 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 4.203 ns                ;
+; N/A                                     ; 226.81 MHz ( period = 4.409 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 4.199 ns                ;
+; N/A                                     ; 227.43 MHz ( period = 4.397 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 4.187 ns                ;
+; N/A                                     ; 227.95 MHz ( period = 4.387 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 4.175 ns                ;
+; N/A                                     ; 228.36 MHz ( period = 4.379 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.163 ns                ;
+; N/A                                     ; 228.52 MHz ( period = 4.376 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 4.168 ns                ;
+; N/A                                     ; 229.31 MHz ( period = 4.361 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; CLK        ; CLK      ; None                        ; None                      ; 4.147 ns                ;
+; N/A                                     ; 229.52 MHz ( period = 4.357 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.147 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.15 MHz ( period = 4.345 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.26 MHz ( period = 4.343 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 4.135 ns                ;
+; N/A                                     ; 230.36 MHz ( period = 4.341 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.131 ns                ;
+; N/A                                     ; 230.41 MHz ( period = 4.340 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; CLK        ; CLK      ; None                        ; None                      ; 4.128 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.098 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 231.80 MHz ( period = 4.314 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.108 ns                ;
+; N/A                                     ; 232.18 MHz ( period = 4.307 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; CLK        ; CLK      ; None                        ; None                      ; 4.095 ns                ;
+; N/A                                     ; 232.72 MHz ( period = 4.297 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.087 ns                ;
+; N/A                                     ; 232.99 MHz ( period = 4.292 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.082 ns                ;
+; N/A                                     ; 233.37 MHz ( period = 4.285 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.075 ns                ;
+; N/A                                     ; 234.03 MHz ( period = 4.273 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 4.059 ns                ;
+; N/A                                     ; 234.19 MHz ( period = 4.270 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.060 ns                ;
+; N/A                                     ; 234.41 MHz ( period = 4.266 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.056 ns                ;
+; N/A                                     ; 234.52 MHz ( period = 4.264 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.056 ns                ;
+; N/A                                     ; 235.68 MHz ( period = 4.243 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.029 ns                ;
+; N/A                                     ; 235.74 MHz ( period = 4.242 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; CLK        ; CLK      ; None                        ; None                      ; 4.032 ns                ;
+; N/A                                     ; 235.74 MHz ( period = 4.242 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; CLK        ; CLK      ; None                        ; None                      ; 4.032 ns                ;
+; N/A                                     ; 235.74 MHz ( period = 4.242 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 4.032 ns                ;
+; N/A                                     ; 235.74 MHz ( period = 4.242 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 4.032 ns                ;
+; N/A                                     ; 235.74 MHz ( period = 4.242 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 4.032 ns                ;
+; N/A                                     ; 235.74 MHz ( period = 4.242 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 4.032 ns                ;
+; N/A                                     ; 235.74 MHz ( period = 4.242 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 4.032 ns                ;
+; N/A                                     ; 235.74 MHz ( period = 4.242 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 4.032 ns                ;
+; N/A                                     ; 235.74 MHz ( period = 4.242 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 4.032 ns                ;
+; N/A                                     ; 235.85 MHz ( period = 4.240 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.026 ns                ;
+; N/A                                     ; 236.35 MHz ( period = 4.231 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.023 ns                ;
+; N/A                                     ; 236.63 MHz ( period = 4.226 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 4.016 ns                ;
+; N/A                                     ; 236.97 MHz ( period = 4.220 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 4.006 ns                ;
+; N/A                                     ; 236.97 MHz ( period = 4.220 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 4.010 ns                ;
+; N/A                                     ; 237.08 MHz ( period = 4.218 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 4.008 ns                ;
+; N/A                                     ; 238.04 MHz ( period = 4.201 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.991 ns                ;
+; N/A                                     ; 238.32 MHz ( period = 4.196 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.986 ns                ;
+; N/A                                     ; 238.49 MHz ( period = 4.193 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.985 ns                ;
+; N/A                                     ; 239.35 MHz ( period = 4.178 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.964 ns                ;
+; N/A                                     ; 240.38 MHz ( period = 4.160 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.952 ns                ;
+; N/A                                     ; 240.62 MHz ( period = 4.156 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; CLK        ; CLK      ; None                        ; None                      ; 3.942 ns                ;
+; N/A                                     ; 240.67 MHz ( period = 4.155 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.945 ns                ;
+; N/A                                     ; 240.67 MHz ( period = 4.155 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.945 ns                ;
+; N/A                                     ; 241.55 MHz ( period = 4.140 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.924 ns                ;
+; N/A                                     ; 242.07 MHz ( period = 4.131 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.921 ns                ;
+; N/A                                     ; 242.19 MHz ( period = 4.129 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 3.915 ns                ;
+; N/A                                     ; 242.31 MHz ( period = 4.127 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 3.917 ns                ;
+; N/A                                     ; 242.42 MHz ( period = 4.125 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 3.909 ns                ;
+; N/A                                     ; 242.60 MHz ( period = 4.122 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.914 ns                ;
+; N/A                                     ; 242.66 MHz ( period = 4.121 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 3.913 ns                ;
+; N/A                                     ; 243.90 MHz ( period = 4.100 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; CLK        ; CLK      ; None                        ; None                      ; 3.886 ns                ;
+; N/A                                     ; 244.56 MHz ( period = 4.089 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.881 ns                ;
+; N/A                                     ; 244.86 MHz ( period = 4.084 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 3.874 ns                ;
+; N/A                                     ; 245.04 MHz ( period = 4.081 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 3.867 ns                ;
+; N/A                                     ; 245.16 MHz ( period = 4.079 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; CLK        ; CLK      ; None                        ; None                      ; 3.867 ns                ;
+; N/A                                     ; 245.40 MHz ( period = 4.075 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 3.865 ns                ;
+; N/A                                     ; 245.52 MHz ( period = 4.073 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; CLK        ; CLK      ; None                        ; None                      ; 3.857 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.58 MHz ( period = 4.072 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.866 ns                ;
+; N/A                                     ; 245.94 MHz ( period = 4.066 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; CLK        ; CLK      ; None                        ; None                      ; 3.854 ns                ;
+; N/A                                     ; 246.06 MHz ( period = 4.064 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.854 ns                ;
+; N/A                                     ; 246.43 MHz ( period = 4.058 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; CLK        ; CLK      ; None                        ; None                      ; 3.844 ns                ;
+; N/A                                     ; 246.49 MHz ( period = 4.057 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 3.847 ns                ;
+; N/A                                     ; 246.49 MHz ( period = 4.057 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.843 ns                ;
+; N/A                                     ; 246.85 MHz ( period = 4.051 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 3.843 ns                ;
+; N/A                                     ; 247.16 MHz ( period = 4.046 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; CLK        ; CLK      ; None                        ; None                      ; 3.834 ns                ;
+; N/A                                     ; 247.16 MHz ( period = 4.046 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.836 ns                ;
+; N/A                                     ; 247.40 MHz ( period = 4.042 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; CLK        ; CLK      ; None                        ; None                      ; 3.830 ns                ;
+; N/A                                     ; 247.83 MHz ( period = 4.035 ns )                    ; P_C:C|c_state.E0                           ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; CLK        ; CLK      ; None                        ; None                      ; 3.827 ns                ;
+; N/A                                     ; 248.14 MHz ( period = 4.030 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 3.822 ns                ;
+; N/A                                     ; 248.76 MHz ( period = 4.020 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 3.806 ns                ;
+; N/A                                     ; 248.88 MHz ( period = 4.018 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 3.810 ns                ;
+; N/A                                     ; 249.13 MHz ( period = 4.014 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 3.804 ns                ;
+; N/A                                     ; 249.19 MHz ( period = 4.013 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 3.803 ns                ;
+; N/A                                     ; 250.38 MHz ( period = 3.994 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.784 ns                ;
+; N/A                                     ; 250.56 MHz ( period = 3.991 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.777 ns                ;
+; N/A                                     ; 250.88 MHz ( period = 3.986 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.772 ns                ;
+; N/A                                     ; 251.26 MHz ( period = 3.980 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 3.772 ns                ;
+; N/A                                     ; 251.89 MHz ( period = 3.970 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; CLK        ; CLK      ; None                        ; None                      ; 3.754 ns                ;
+; N/A                                     ; 252.33 MHz ( period = 3.963 ns )                    ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; CLK        ; CLK      ; None                        ; None                      ; 3.751 ns                ;
+; N/A                                     ; 252.53 MHz ( period = 3.960 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 3.752 ns                ;
+; N/A                                     ; 253.36 MHz ( period = 3.947 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 3.739 ns                ;
+; N/A                                     ; 253.68 MHz ( period = 3.942 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 3.732 ns                ;
+; N/A                                     ; 254.84 MHz ( period = 3.924 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.708 ns                ;
+; N/A                                     ; 254.91 MHz ( period = 3.923 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 3.713 ns                ;
+; N/A                                     ; 255.82 MHz ( period = 3.909 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 3.701 ns                ;
+; N/A                                     ; 256.28 MHz ( period = 3.902 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.692 ns                ;
+; N/A                                     ; 257.86 MHz ( period = 3.878 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.664 ns                ;
+; N/A                                     ; 258.00 MHz ( period = 3.876 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 3.668 ns                ;
+; N/A                                     ; 258.33 MHz ( period = 3.871 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 3.661 ns                ;
+; N/A                                     ; 259.54 MHz ( period = 3.853 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 3.643 ns                ;
+; N/A                                     ; 259.54 MHz ( period = 3.853 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.637 ns                ;
+; N/A                                     ; 259.74 MHz ( period = 3.850 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.636 ns                ;
+; N/A                                     ; 261.03 MHz ( period = 3.831 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.621 ns                ;
+; N/A                                     ; 261.10 MHz ( period = 3.830 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.620 ns                ;
+; N/A                                     ; 262.40 MHz ( period = 3.811 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.601 ns                ;
+; N/A                                     ; 263.16 MHz ( period = 3.800 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; CLK        ; CLK      ; None                        ; None                      ; 3.588 ns                ;
+; N/A                                     ; 263.37 MHz ( period = 3.797 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; CLK        ; CLK      ; None                        ; None                      ; 3.583 ns                ;
+; N/A                                     ; 263.64 MHz ( period = 3.793 ns )                    ; P_C:C|c_state.E1                           ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; CLK        ; CLK      ; None                        ; None                      ; 3.585 ns                ;
+; N/A                                     ; 263.99 MHz ( period = 3.788 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.574 ns                ;
+; N/A                                     ; 264.69 MHz ( period = 3.778 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 3.568 ns                ;
+; N/A                                     ; 265.96 MHz ( period = 3.760 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.550 ns                ;
+; N/A                                     ; 266.03 MHz ( period = 3.759 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.549 ns                ;
+; N/A                                     ; 266.67 MHz ( period = 3.750 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; CLK        ; CLK      ; None                        ; None                      ; 3.542 ns                ;
+; N/A                                     ; 266.88 MHz ( period = 3.747 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 3.533 ns                ;
+; N/A                                     ; 266.95 MHz ( period = 3.746 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 3.538 ns                ;
+; N/A                                     ; 267.02 MHz ( period = 3.745 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.529 ns                ;
+; N/A                                     ; 267.31 MHz ( period = 3.741 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.531 ns                ;
+; N/A                                     ; 267.38 MHz ( period = 3.740 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.530 ns                ;
+; N/A                                     ; 268.17 MHz ( period = 3.729 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; top_op:O|registre_nbits:Reg_b|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.515 ns                ;
+; N/A                                     ; 268.31 MHz ( period = 3.727 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[11] ; top_op:O|registre_nbits:Reg_b|Data_out[12] ; CLK        ; CLK      ; None                        ; None                      ; 3.513 ns                ;
+; N/A                                     ; 269.03 MHz ( period = 3.717 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[9]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.503 ns                ;
+; N/A                                     ; 269.25 MHz ( period = 3.714 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 3.500 ns                ;
+; N/A                                     ; 269.32 MHz ( period = 3.713 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK        ; CLK      ; None                        ; None                      ; 3.505 ns                ;
+; N/A                                     ; 269.54 MHz ( period = 3.710 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 3.496 ns                ;
+; N/A                                     ; 271.08 MHz ( period = 3.689 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK        ; CLK      ; None                        ; None                      ; 3.479 ns                ;
+; N/A                                     ; 272.11 MHz ( period = 3.675 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 3.467 ns                ;
+; N/A                                     ; 272.33 MHz ( period = 3.672 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 3.462 ns                ;
+; N/A                                     ; 272.48 MHz ( period = 3.670 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[5]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK        ; CLK      ; None                        ; None                      ; 3.460 ns                ;
+; N/A                                     ; 272.55 MHz ( period = 3.669 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[4]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.459 ns                ;
+; N/A                                     ; 273.75 MHz ( period = 3.653 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[7]  ; top_op:O|registre_nbits:Reg_b|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 3.437 ns                ;
+; N/A                                     ; 273.90 MHz ( period = 3.651 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[6]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK        ; CLK      ; None                        ; None                      ; 3.441 ns                ;
+; N/A                                     ; 274.57 MHz ( period = 3.642 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK        ; CLK      ; None                        ; None                      ; 3.434 ns                ;
+; N/A                                     ; 276.40 MHz ( period = 3.618 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[3]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK        ; CLK      ; None                        ; None                      ; 3.408 ns                ;
+; N/A                                     ; 277.47 MHz ( period = 3.604 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 3.396 ns                ;
+; N/A                                     ; 277.70 MHz ( period = 3.601 ns )                    ; top_op:O|registre_nbits:Reg_b|Data_out[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK        ; CLK      ; None                        ; None                      ; 3.391 ns                ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                            ;                                            ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+--------------------------------------------+--------------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; tsu                                                                                               ;
++-------+--------------+------------+-------+--------------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From  ; To                                         ; To Clock ;
++-------+--------------+------------+-------+--------------------------------------------+----------+
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; CLK      ;
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; CLK      ;
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK      ;
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK      ;
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK      ;
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK      ;
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK      ;
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK      ;
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK      ;
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK      ;
+; N/A   ; None         ; 6.144 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK      ;
+; N/A   ; None         ; 5.885 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK      ;
+; N/A   ; None         ; 5.872 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; CLK      ;
+; N/A   ; None         ; 5.865 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; CLK      ;
+; N/A   ; None         ; 5.613 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; CLK      ;
+; N/A   ; None         ; 5.606 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; CLK      ;
+; N/A   ; None         ; 4.644 ns   ; N[0]  ; P_C:C|c_state.E3                           ; CLK      ;
+; N/A   ; None         ; 4.385 ns   ; N[1]  ; P_C:C|c_state.E3                           ; CLK      ;
+; N/A   ; None         ; 3.577 ns   ; N[1]  ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; CLK      ;
+; N/A   ; None         ; 3.570 ns   ; N[0]  ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK      ;
+; N/A   ; None         ; 2.524 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK      ;
+; N/A   ; None         ; 2.252 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; CLK      ;
+; N/A   ; None         ; 2.245 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; CLK      ;
+; N/A   ; None         ; 1.024 ns   ; N[2]  ; P_C:C|c_state.E3                           ; CLK      ;
+; N/A   ; None         ; 0.940 ns   ; N[2]  ; top_op:O|registre_nbits:Reg_a|Data_out[2]  ; CLK      ;
+; N/A   ; None         ; 0.109 ns   ; START ; P_C:C|c_state.E0                           ; CLK      ;
+; N/A   ; None         ; 0.108 ns   ; START ; P_C:C|c_state.E1                           ; CLK      ;
++-------+--------------+------------+-------+--------------------------------------------+----------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; tco                                                                                                    ;
++-------+--------------+------------+--------------------------------------------+----------+------------+
+; Slack ; Required tco ; Actual tco ; From                                       ; To       ; From Clock ;
++-------+--------------+------------+--------------------------------------------+----------+------------+
+; N/A   ; None         ; 7.412 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; fact[1]  ; CLK        ;
+; N/A   ; None         ; 7.366 ns   ; P_C:C|c_state.E0                           ; Rdy      ; CLK        ;
+; N/A   ; None         ; 7.350 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; fact[12] ; CLK        ;
+; N/A   ; None         ; 7.229 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; fact[6]  ; CLK        ;
+; N/A   ; None         ; 7.173 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; fact[9]  ; CLK        ;
+; N/A   ; None         ; 7.155 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; fact[7]  ; CLK        ;
+; N/A   ; None         ; 7.112 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; fact[11] ; CLK        ;
+; N/A   ; None         ; 7.080 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; fact[3]  ; CLK        ;
+; N/A   ; None         ; 6.929 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; fact[10] ; CLK        ;
+; N/A   ; None         ; 6.925 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; fact[2]  ; CLK        ;
+; N/A   ; None         ; 6.923 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; fact[5]  ; CLK        ;
+; N/A   ; None         ; 6.911 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; fact[8]  ; CLK        ;
+; N/A   ; None         ; 6.902 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; fact[4]  ; CLK        ;
+; N/A   ; None         ; 6.866 ns   ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; fact[0]  ; CLK        ;
++-------+--------------+------------+--------------------------------------------+----------+------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; th                                                                                                      ;
++---------------+-------------+-----------+-------+--------------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th ; From  ; To                                         ; To Clock ;
++---------------+-------------+-----------+-------+--------------------------------------------+----------+
+; N/A           ; None        ; 0.122 ns  ; START ; P_C:C|c_state.E1                           ; CLK      ;
+; N/A           ; None        ; 0.121 ns  ; START ; P_C:C|c_state.E0                           ; CLK      ;
+; N/A           ; None        ; -0.710 ns ; N[2]  ; top_op:O|registre_nbits:Reg_a|Data_out[2]  ; CLK      ;
+; N/A           ; None        ; -0.794 ns ; N[2]  ; P_C:C|c_state.E3                           ; CLK      ;
+; N/A           ; None        ; -2.015 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; CLK      ;
+; N/A           ; None        ; -2.022 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK      ;
+; N/A           ; None        ; -2.294 ns ; N[2]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK      ;
+; N/A           ; None        ; -3.340 ns ; N[0]  ; top_op:O|registre_nbits:Reg_a|Data_out[0]  ; CLK      ;
+; N/A           ; None        ; -3.347 ns ; N[1]  ; top_op:O|registre_nbits:Reg_a|Data_out[1]  ; CLK      ;
+; N/A           ; None        ; -4.155 ns ; N[1]  ; P_C:C|c_state.E3                           ; CLK      ;
+; N/A           ; None        ; -4.414 ns ; N[0]  ; P_C:C|c_state.E3                           ; CLK      ;
+; N/A           ; None        ; -5.376 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; CLK      ;
+; N/A           ; None        ; -5.383 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; CLK      ;
+; N/A           ; None        ; -5.635 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[1]  ; CLK      ;
+; N/A           ; None        ; -5.642 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[0]  ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK      ;
+; N/A           ; None        ; -5.655 ns ; N[1]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[2]  ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[3]  ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[4]  ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[5]  ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[6]  ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[7]  ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[8]  ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[9]  ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[10] ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[11] ; CLK      ;
+; N/A           ; None        ; -5.914 ns ; N[0]  ; top_op:O|registre_nbits:Reg_c|Data_out[12] ; CLK      ;
++---------------+-------------+-----------+-------+--------------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Tue Sep 08 11:09:46 2020
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off factorielle -c factorielle --timing_analysis_only
+Info: Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "CLK" is an undefined clock
+Info: Clock "CLK" has Internal fmax of 208.51 MHz between source register "top_op:O|registre_nbits:Reg_a|Data_out[0]" and destination register "top_op:O|registre_nbits:Reg_b|Data_out[11]" (period= 4.796 ns)
+    Info: + Longest register to register delay is 4.586 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X76_Y44_N9; Fanout = 17; REG Node = 'top_op:O|registre_nbits:Reg_a|Data_out[0]'
+        Info: 2: + IC(0.538 ns) + CELL(0.413 ns) = 0.951 ns; Loc. = LCCOMB_X77_Y44_N24; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|decoder_node[0][1]'
+        Info: 3: + IC(0.261 ns) + CELL(0.414 ns) = 1.626 ns; Loc. = LCCOMB_X77_Y44_N0; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_h8h:auto_generated|op_1~34'
+        Info: 4: + IC(0.000 ns) + CELL(0.071 ns) = 1.697 ns; Loc. = LCCOMB_X77_Y44_N2; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_h8h:auto_generated|op_1~36'
+        Info: 5: + IC(0.000 ns) + CELL(0.071 ns) = 1.768 ns; Loc. = LCCOMB_X77_Y44_N4; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_h8h:auto_generated|op_1~38'
+        Info: 6: + IC(0.000 ns) + CELL(0.071 ns) = 1.839 ns; Loc. = LCCOMB_X77_Y44_N6; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_h8h:auto_generated|op_1~40'
+        Info: 7: + IC(0.000 ns) + CELL(0.071 ns) = 1.910 ns; Loc. = LCCOMB_X77_Y44_N8; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_h8h:auto_generated|op_1~42'
+        Info: 8: + IC(0.000 ns) + CELL(0.410 ns) = 2.320 ns; Loc. = LCCOMB_X77_Y44_N10; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|lpm_add_sub:adder[0]|add_sub_h8h:auto_generated|op_1~43'
+        Info: 9: + IC(0.458 ns) + CELL(0.504 ns) = 3.282 ns; Loc. = LCCOMB_X78_Y44_N14; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_i8h:auto_generated|op_1~39'
+        Info: 10: + IC(0.000 ns) + CELL(0.071 ns) = 3.353 ns; Loc. = LCCOMB_X78_Y44_N16; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_i8h:auto_generated|op_1~41'
+        Info: 11: + IC(0.000 ns) + CELL(0.071 ns) = 3.424 ns; Loc. = LCCOMB_X78_Y44_N18; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_i8h:auto_generated|op_1~43'
+        Info: 12: + IC(0.000 ns) + CELL(0.071 ns) = 3.495 ns; Loc. = LCCOMB_X78_Y44_N20; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_i8h:auto_generated|op_1~45'
+        Info: 13: + IC(0.000 ns) + CELL(0.071 ns) = 3.566 ns; Loc. = LCCOMB_X78_Y44_N22; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_i8h:auto_generated|op_1~47'
+        Info: 14: + IC(0.000 ns) + CELL(0.410 ns) = 3.976 ns; Loc. = LCCOMB_X78_Y44_N24; Fanout = 2; COMB Node = 'top_op:O|Multip_16bits:Mul|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder|mpar_add:sub_par_add|lpm_add_sub:adder[0]|add_sub_i8h:auto_generated|op_1~48'
+        Info: 15: + IC(0.251 ns) + CELL(0.275 ns) = 4.502 ns; Loc. = LCCOMB_X78_Y44_N28; Fanout = 1; COMB Node = 'top_op:O|Mux2_1:Mux2|Data_out[11]~48'
+        Info: 16: + IC(0.000 ns) + CELL(0.084 ns) = 4.586 ns; Loc. = LCFF_X78_Y44_N29; Fanout = 2; REG Node = 'top_op:O|registre_nbits:Reg_b|Data_out[11]'
+        Info: Total cell delay = 3.078 ns ( 67.12 % )
+        Info: Total interconnect delay = 1.508 ns ( 32.88 % )
+    Info: - Smallest clock skew is 0.004 ns
+        Info: + Shortest clock path from clock "CLK" to destination register is 2.873 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 1; CLK Node = 'CLK'
+            Info: 2: + IC(0.114 ns) + CELL(0.000 ns) = 1.103 ns; Loc. = CLKCTRL_G3; Fanout = 33; COMB Node = 'CLK~clkctrl'
+            Info: 3: + IC(1.233 ns) + CELL(0.537 ns) = 2.873 ns; Loc. = LCFF_X78_Y44_N29; Fanout = 2; REG Node = 'top_op:O|registre_nbits:Reg_b|Data_out[11]'
+            Info: Total cell delay = 1.526 ns ( 53.12 % )
+            Info: Total interconnect delay = 1.347 ns ( 46.88 % )
+        Info: - Longest clock path from clock "CLK" to source register is 2.869 ns
+            Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 1; CLK Node = 'CLK'
+            Info: 2: + IC(0.114 ns) + CELL(0.000 ns) = 1.103 ns; Loc. = CLKCTRL_G3; Fanout = 33; COMB Node = 'CLK~clkctrl'
+            Info: 3: + IC(1.229 ns) + CELL(0.537 ns) = 2.869 ns; Loc. = LCFF_X76_Y44_N9; Fanout = 17; REG Node = 'top_op:O|registre_nbits:Reg_a|Data_out[0]'
+            Info: Total cell delay = 1.526 ns ( 53.19 % )
+            Info: Total interconnect delay = 1.343 ns ( 46.81 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Micro setup delay of destination is -0.036 ns
+Info: tsu for register "top_op:O|registre_nbits:Reg_c|Data_out[2]" (data pin = "N[0]", clock pin = "CLK") is 6.144 ns
+    Info: + Longest pin to register delay is 9.053 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.850 ns) = 0.850 ns; Loc. = PIN_C22; Fanout = 1; PIN Node = 'N[0]'
+        Info: 2: + IC(5.121 ns) + CELL(0.420 ns) = 6.391 ns; Loc. = LCCOMB_X76_Y44_N8; Fanout = 2; COMB Node = 'top_op:O|Mux2_1:Mux1|Data_out[0]~4'
+        Info: 3: + IC(0.672 ns) + CELL(0.398 ns) = 7.461 ns; Loc. = LCCOMB_X74_Y44_N26; Fanout = 14; COMB Node = 'P_C:C|n_state.E3~1'
+        Info: 4: + IC(0.932 ns) + CELL(0.660 ns) = 9.053 ns; Loc. = LCFF_X78_Y44_N7; Fanout = 1; REG Node = 'top_op:O|registre_nbits:Reg_c|Data_out[2]'
+        Info: Total cell delay = 2.328 ns ( 25.72 % )
+        Info: Total interconnect delay = 6.725 ns ( 74.28 % )
+    Info: + Micro setup delay of destination is -0.036 ns
+    Info: - Shortest clock path from clock "CLK" to destination register is 2.873 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 1; CLK Node = 'CLK'
+        Info: 2: + IC(0.114 ns) + CELL(0.000 ns) = 1.103 ns; Loc. = CLKCTRL_G3; Fanout = 33; COMB Node = 'CLK~clkctrl'
+        Info: 3: + IC(1.233 ns) + CELL(0.537 ns) = 2.873 ns; Loc. = LCFF_X78_Y44_N7; Fanout = 1; REG Node = 'top_op:O|registre_nbits:Reg_c|Data_out[2]'
+        Info: Total cell delay = 1.526 ns ( 53.12 % )
+        Info: Total interconnect delay = 1.347 ns ( 46.88 % )
+Info: tco from clock "CLK" to destination pin "fact[1]" through register "top_op:O|registre_nbits:Reg_c|Data_out[1]" is 7.412 ns
+    Info: + Longest clock path from clock "CLK" to source register is 2.871 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 1; CLK Node = 'CLK'
+        Info: 2: + IC(0.114 ns) + CELL(0.000 ns) = 1.103 ns; Loc. = CLKCTRL_G3; Fanout = 33; COMB Node = 'CLK~clkctrl'
+        Info: 3: + IC(1.231 ns) + CELL(0.537 ns) = 2.871 ns; Loc. = LCFF_X77_Y44_N1; Fanout = 1; REG Node = 'top_op:O|registre_nbits:Reg_c|Data_out[1]'
+        Info: Total cell delay = 1.526 ns ( 53.15 % )
+        Info: Total interconnect delay = 1.345 ns ( 46.85 % )
+    Info: + Micro clock to output delay of source is 0.250 ns
+    Info: + Longest register to pin delay is 4.291 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LCFF_X77_Y44_N1; Fanout = 1; REG Node = 'top_op:O|registre_nbits:Reg_c|Data_out[1]'
+        Info: 2: + IC(1.659 ns) + CELL(2.632 ns) = 4.291 ns; Loc. = PIN_H28; Fanout = 0; PIN Node = 'fact[1]'
+        Info: Total cell delay = 2.632 ns ( 61.34 % )
+        Info: Total interconnect delay = 1.659 ns ( 38.66 % )
+Info: th for register "P_C:C|c_state.E1" (data pin = "START", clock pin = "CLK") is 0.122 ns
+    Info: + Longest clock path from clock "CLK" to destination register is 2.865 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.989 ns) = 0.989 ns; Loc. = PIN_T2; Fanout = 1; CLK Node = 'CLK'
+        Info: 2: + IC(0.114 ns) + CELL(0.000 ns) = 1.103 ns; Loc. = CLKCTRL_G3; Fanout = 33; COMB Node = 'CLK~clkctrl'
+        Info: 3: + IC(1.225 ns) + CELL(0.537 ns) = 2.865 ns; Loc. = LCFF_X74_Y44_N29; Fanout = 16; REG Node = 'P_C:C|c_state.E1'
+        Info: Total cell delay = 1.526 ns ( 53.26 % )
+        Info: Total interconnect delay = 1.339 ns ( 46.74 % )
+    Info: + Micro hold delay of destination is 0.266 ns
+    Info: - Shortest pin to register delay is 3.009 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.959 ns) = 0.959 ns; Loc. = PIN_G15; Fanout = 2; PIN Node = 'START'
+        Info: 2: + IC(1.528 ns) + CELL(0.438 ns) = 2.925 ns; Loc. = LCCOMB_X74_Y44_N28; Fanout = 1; COMB Node = 'P_C:C|n_state.E1~0'
+        Info: 3: + IC(0.000 ns) + CELL(0.084 ns) = 3.009 ns; Loc. = LCFF_X74_Y44_N29; Fanout = 16; REG Node = 'P_C:C|c_state.E1'
+        Info: Total cell delay = 1.481 ns ( 49.22 % )
+        Info: Total interconnect delay = 1.528 ns ( 50.78 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 204 megabytes
+    Info: Processing ended: Tue Sep 08 11:09:47 2020
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

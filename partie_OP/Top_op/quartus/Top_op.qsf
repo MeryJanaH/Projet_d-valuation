@@ -1,0 +1,84 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2009 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 9.0 Build 132 02/25/2009 SJ Full Version
+# Date created = 09:29:47  September 05, 2020
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Top_op_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C70F896C6
+set_global_assignment -name TOP_LEVEL_ENTITY Top_op
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 9.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:29:47  SEPTEMBER 05, 2020"
+set_global_assignment -name LAST_QUARTUS_VERSION 9.0
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name VHDL_FILE ../../Comparateur_0/src/comp_3bits.vhd
+set_global_assignment -name VHDL_FILE ../../Decrementeur/src/dec_1.vhd
+set_global_assignment -name VHDL_FILE ../../Multiplieur/src/Multip_16bits.vhd
+set_global_assignment -name VHDL_FILE ../../Mux2_1/src/Mux2_1.vhd
+set_global_assignment -name VHDL_FILE ../../Registre_nbits/src/registre_nbits.vhd
+set_global_assignment -name VHDL_FILE ../src/top_op.vhd
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_E16 -to Clk
+set_location_assignment PIN_AA23 -to En_a
+set_location_assignment PIN_AB26 -to En_b
+set_location_assignment PIN_AB25 -to En_r
+set_location_assignment PIN_AC27 -to N[2]
+set_location_assignment PIN_AC26 -to N[1]
+set_location_assignment PIN_AC24 -to N[0]
+set_location_assignment PIN_AJ6 -to R_diff
+set_location_assignment PIN_AK5 -to R_mul[12]
+set_location_assignment PIN_AJ5 -to R_mul[11]
+set_location_assignment PIN_AJ4 -to R_mul[10]
+set_location_assignment PIN_AK3 -to R_mul[9]
+set_location_assignment PIN_AH4 -to R_mul[8]
+set_location_assignment PIN_AJ3 -to R_mul[7]
+set_location_assignment PIN_AJ2 -to R_mul[6]
+set_location_assignment PIN_AH3 -to R_mul[5]
+set_location_assignment PIN_AD14 -to R_mul[4]
+set_location_assignment PIN_AC13 -to R_mul[3]
+set_location_assignment PIN_AB13 -to R_mul[2]
+set_location_assignment PIN_AC12 -to R_mul[1]
+set_location_assignment PIN_AB12 -to R_mul[0]
+set_location_assignment PIN_T29 -to Rst
+set_location_assignment PIN_AC23 -to Sel_a
+set_location_assignment PIN_AD24 -to Sel_b
+set_global_assignment -name MISC_FILE "C:/ANNOUAR_Meryem/partie_OP/Top_op/quartus/Top_op.dpf"

@@ -1,0 +1,177 @@
+Partition Merge report for factorielle
+Sat Sep 05 13:47:29 2020
+Quartus II Version 9.0 Build 132 02/25/2009 SJ Full Version
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Partition Merge Partition Statistics
+  5. Partition Merge Resource Usage Summary
+  6. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2009 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Partition Merge Summary                                                       ;
++------------------------------------+------------------------------------------+
+; Partition Merge Status             ; Successful - Sat Sep 05 13:47:29 2020    ;
+; Quartus II Version                 ; 9.0 Build 132 02/25/2009 SJ Full Version ;
+; Revision Name                      ; factorielle                              ;
+; Top-level Entity Name              ; factorielle                              ;
+; Family                             ; Cyclone II                               ;
+; Total logic elements               ; 82                                       ;
+;     Total combinational functions  ; 81                                       ;
+;     Dedicated logic registers      ; 33                                       ;
+; Total registers                    ; 33                                       ;
+; Total pins                         ; 20                                       ;
+; Total virtual pins                 ; 0                                        ;
+; Total memory bits                  ; 0                                        ;
+; Embedded Multiplier 9-bit elements ; 0                                        ;
+; Total PLLs                         ; 0                                        ;
++------------------------------------+------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                ;
++----------------+----------------+-------------------+------------------------+--------------------+
+; Partition Name ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents ;
++----------------+----------------+-------------------+------------------------+--------------------+
+; Top            ; User-created   ; Source File       ; Source File            ;                    ;
++----------------+----------------+-------------------+------------------------+--------------------+
+
+
++---------------------------------------------------+
+; Partition Merge Partition Statistics              ;
++---------------------------------------------+-----+
+; Statistic                                   ; Top ;
++---------------------------------------------+-----+
+; Estimated Total logic elements              ; 82  ;
+;                                             ;     ;
+; Total combinational functions               ; 81  ;
+; Logic element usage by number of LUT inputs ;     ;
+;     -- 4 input functions                    ; 1   ;
+;     -- 3 input functions                    ; 25  ;
+;     -- <=2 input functions                  ; 55  ;
+;                                             ;     ;
+; Logic elements by mode                      ;     ;
+;     -- normal mode                          ; 60  ;
+;     -- arithmetic mode                      ; 21  ;
+;                                             ;     ;
+; Total registers                             ; 33  ;
+;     -- Dedicated logic registers            ; 33  ;
+;     -- I/O registers                        ; 0   ;
+;                                             ;     ;
+; Virtual pins                                ; 0   ;
+; I/O pins                                    ; 20  ;
+; Embedded Multiplier 9-bit elements          ; 0   ;
+; Total memory bits                           ; 0   ;
+; Total RAM block bits                        ; 0   ;
+;                                             ;     ;
+; Connections                                 ;     ;
+;     -- Input Connections                    ; 0   ;
+;     -- Registered Input Connections         ; 0   ;
+;     -- Output Connections                   ; 0   ;
+;     -- Registered Output Connections        ; 0   ;
+;                                             ;     ;
+; Internal Connections                        ;     ;
+;     -- Total Connections                    ; 336 ;
+;     -- Registered Connections               ; 122 ;
+;                                             ;     ;
+; External Connections                        ;     ;
+;     -- Top                                  ; 0   ;
+;                                             ;     ;
+; Partition Interface                         ;     ;
+;     -- Input Ports                          ; 6   ;
+;     -- Output Ports                         ; 14  ;
+;     -- Bidir Ports                          ; 0   ;
+;                                             ;     ;
+; Registered Ports                            ;     ;
+;     -- Registered Input Ports               ; 0   ;
+;     -- Registered Output Ports              ; 0   ;
+;                                             ;     ;
+; Port Connectivity                           ;     ;
+;     -- Input Ports driven by GND            ; 0   ;
+;     -- Output Ports driven by GND           ; 0   ;
+;     -- Input Ports driven by VCC            ; 0   ;
+;     -- Output Ports driven by VCC           ; 0   ;
+;     -- Input Ports with no Source           ; 0   ;
+;     -- Output Ports with no Source          ; 0   ;
+;     -- Input Ports with no Fanout           ; 0   ;
+;     -- Output Ports with no Fanout          ; 0   ;
++---------------------------------------------+-----+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++-----------------------------------------------------+
+; Partition Merge Resource Usage Summary              ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 82    ;
+;                                             ;       ;
+; Total combinational functions               ; 81    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 1     ;
+;     -- 3 input functions                    ; 25    ;
+;     -- <=2 input functions                  ; 55    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 60    ;
+;     -- arithmetic mode                      ; 21    ;
+;                                             ;       ;
+; Total registers                             ; 33    ;
+;     -- Dedicated logic registers            ; 33    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 20    ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 33    ;
+; Total fan-out                               ; 336   ;
+; Average fan-out                             ; 2.51  ;
++---------------------------------------------+-------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Partition Merge
+    Info: Version 9.0 Build 132 02/25/2009 SJ Full Version
+    Info: Processing started: Sat Sep 05 13:47:27 2020
+Info: Command: quartus_cdb --read_settings_files=on --write_settings_files=off factorielle -c factorielle --merge=on
+Info: Using synthesis netlist for partition "Top"
+Info: Resolved and merged 1 partition(s)
+Info: Implemented 115 device resources after synthesis - the final resource count might be different
+    Info: Implemented 6 input pins
+    Info: Implemented 14 output pins
+    Info: Implemented 95 logic cells
+Info: Quartus II Partition Merge was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 263 megabytes
+    Info: Processing ended: Sat Sep 05 13:47:29 2020
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

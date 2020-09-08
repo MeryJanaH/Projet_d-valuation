@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Sep 05 10:30:28 2020
+Quartus II Version : 9.0 Build 132 02/25/2009 SJ Full Version
+Revision Name : registre_nbits
+Top-level Entity Name : registre_nbits
+Family : Cyclone II
+Total logic elements : 3
+    Total combinational functions : 0
+    Dedicated logic registers : 3
+Total registers : 3
+Total pins : 9
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
